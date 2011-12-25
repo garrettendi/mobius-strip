@@ -1,0 +1,24 @@
+// package
+
+// imports
+
+// class
+  // inner classes
+
+  // public static variables
+  // private static variables
+
+  // public static methods
+  // private static methods
+
+  // public variables
+  // private variables
+
+  // constructors
+
+  // public get/set methods
+
+  // public methods
+  // private methods
+
+// any additional classes

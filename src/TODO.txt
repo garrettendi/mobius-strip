@@ -1,0 +1,8 @@
+TODO
+====
+
+1. Work out XML serialisation of MobiusFile.java and subclasses
+2. Get first draft example room and control UI working
+  a. Tick with button press.
+  b. Space bar to pause. Allows menu commands but not directions.
+3. Automated crowds
