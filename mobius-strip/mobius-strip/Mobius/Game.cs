@@ -4,16 +4,38 @@ namespace Mobius
 {
   public class Game : MobiusFile
   {
-    // Folder of the game files for THIS PARTICULAR GAME.
+    /// <summary>
+    /// Gets or sets the folder of the game files for THIS PARTICULAR GAME.
+    /// </summary>
+    /// <value>
+    /// Folder of the game files for THIS PARTICULAR GAME.
+    /// </value>
     public string GameFolder { get; set; }
 
-    // The name of the starting room for new games. This should be the 
-    // filename, not including the .xml extension.
+    /// <summary>
+    /// Gets or sets the name of the starting room for new games. This should be the 
+    /// filename, not including the .xml extension..
+    /// </summary>
+    /// <value>
+    /// The starting room for new games. This should be the 
+    /// filename, not including the .xml extension..
+    /// </value>
     public string Start { get; set; }
 
-    // The name of the game.
+    /// <summary>
+    /// Gets or sets the the name of the game.
+    /// </summary>
+    /// <value>
+    /// The name of the game.
+    /// </value>
     private string Name { get; set; }
-
+  
+    /// <summary>
+    /// Gets the type.
+    /// </summary>
+    /// <value>
+    /// The type.
+    /// </value>
     public override string Type { get { return Mobius.Enum.FileType.GAME; } }
 
     /// <summary>
