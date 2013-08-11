@@ -1,8 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="mobius-strip/Main.cs">
+    <Files>
+      <File FileName="mobius-strip/Main.cs" Line="12" Column="44" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/home/garrettendi/workspace/mobius-strip/mobius-strip/mobius-strip/Main.cs" line="62" />
+      <Breakpoint file="/home/garrettendi/workspace/mobius-strip/mobius-strip/mobius-strip/Main.cs" line="67" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
