@@ -57,10 +57,10 @@ namespace Mobius
     public void OnResize()
     {
       Graphics g = this.CreateGraphics();
-      int fw = (int)g.MeasureString("H", textBox1.Font).Width;
+      float fw = g.MeasureString("H", textBox1.Font).Width - 4.5f;
       g.Dispose();
 
-      decimal result = this.Width * (decimal)1.45 / fw;
+      float result = this.Width / fw;
       this.width = (int)Math.Floor(result);
 
       result = this.Height / (textBox1.Font.Height);
