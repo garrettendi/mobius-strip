@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mobius
 {
-  internal class JournalWriter
+  public class JournalWriter
   {
     private MainForm form;
 

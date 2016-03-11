@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mobius
 {
-  internal class MapWriter
+  public class MapWriter
   {
     private MainForm form;
 

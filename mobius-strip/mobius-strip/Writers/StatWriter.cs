@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mobius
 {
-  internal class StatWriter
+  public class StatWriter
   {
     private MainForm form;
 

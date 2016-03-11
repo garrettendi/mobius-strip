@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mobius
 {
-  internal class ScreenWriter
+  public class ScreenWriter
   {
     MainForm form;
 

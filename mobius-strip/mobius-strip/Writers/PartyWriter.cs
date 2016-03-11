@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mobius
 {
-  internal class PartyWriter
+  public class PartyWriter
   {
     private MainForm form;
 
