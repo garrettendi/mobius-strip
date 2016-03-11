@@ -2,7 +2,7 @@ using System;
 
 namespace Mobius
 {
-  public class Game : MobiusFile
+  internal class Game : MobiusFile
   {
     /// <summary>
     /// Gets or sets the folder of the game files for THIS PARTICULAR GAME.
@@ -10,7 +10,7 @@ namespace Mobius
     /// <value>
     /// Folder of the game files for THIS PARTICULAR GAME.
     /// </value>
-    public string GameFolder { get; set; }
+    internal string GameFolder { get; set; }
 
     /// <summary>
     /// Gets or sets the name of the starting room for new games. This should be the 
@@ -20,7 +20,7 @@ namespace Mobius
     /// The starting room for new games. This should be the 
     /// filename, not including the .xml extension..
     /// </value>
-    public string Start { get; set; }
+    internal string Start { get; set; }
 
     /// <summary>
     /// Gets or sets the the name of the game.
@@ -36,7 +36,7 @@ namespace Mobius
     /// <value>
     /// The type.
     /// </value>
-    public override string Type { get { return Mobius.Enum.FileType.GAME; } }
+    internal override string Type { get { return Mobius.Enum.FileType.GAME; } }
 
     /// <summary>
     /// Constructor. Creates a <see cref="Mobius.Game"/> class with null parameters. The FileType is always Game.
@@ -45,7 +45,7 @@ namespace Mobius
     /// <param name='id'>
     /// id.
     /// </param>
-    public Game(string id) : base(id)
+    internal Game(string id) : base(id)
     {
       this.GameFolder = null;
       this.Start = null;
@@ -66,7 +66,7 @@ namespace Mobius
     /// <param name='start'>
     /// The name of the starting room for new game. This is the name of the room file minus the extension
     /// </param>
-    public Game(string id, string name, string gameFolder, string start) : base(id)
+    internal Game(string id, string name, string gameFolder, string start) : base(id)
     {
       this.Name = name;
       this.GameFolder = gameFolder;

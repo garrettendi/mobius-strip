@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Mobius
 {
-  public class MapWriter
+  internal class MapWriter
   {
     private MainForm form;
 
-    public MapWriter(MainForm f)
+    internal MapWriter(MainForm f)
     {
       form = f;
     }
 
-    public void DrawMapWin()
+    internal void DrawMapWin()
     {
       form.Writer.AddFullLine("*", "*", "-", form.ConsoleWidth - MainForm.PARTY_WIDTH, 0, 1);
       for (int i = 2; i < form.ConsoleHeight - MainForm.JOURNAL_HEIGHT - 1; i++)

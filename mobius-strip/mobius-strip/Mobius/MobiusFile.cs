@@ -3,7 +3,7 @@ using System;
 namespace Mobius
 {
   [Serializable]
-  public abstract class MobiusFile
+  internal abstract class MobiusFile
   {
     /// <summary>
     /// Gets or sets the identifier.
@@ -11,7 +11,7 @@ namespace Mobius
     /// <value>
     /// The identifier.
     /// </value>
-    public string Id { get; set; }
+    internal string Id { get; set; }
    
     /// <summary>
     /// Gets the type.
@@ -19,7 +19,7 @@ namespace Mobius
     /// <value>
     /// The type.
     /// </value>
-    public abstract string Type { get; }
+    internal abstract string Type { get; }
   
     /// <summary>
     /// Initializes a new instance of the <see cref="Mobius.MobiusFile"/> class.
@@ -27,13 +27,13 @@ namespace Mobius
     /// <param name='id'>
     /// Identifier.
     /// </param>
-    public MobiusFile(string id)
+    internal MobiusFile(string id)
     {
       this.Id = id;
     }
 
     #region unported java
-//    public static MobiusFile loadFromFile(String path)
+//    internal static MobiusFile loadFromFile(String path)
 //    {
 //      try
 //      {

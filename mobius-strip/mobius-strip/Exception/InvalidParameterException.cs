@@ -2,14 +2,14 @@ using System;
 
 namespace Mobius.Exception
 {
-	public class InvalidParameterException : System.Exception
+	internal class InvalidParameterException : System.Exception
 	{
-    public string Type { get; set; }
-    public string FileName { get; set; }
-    public string ParameterName { get; set; }
-    public string ParameterValue { get; set; }
+    internal string Type { get; set; }
+    internal string FileName { get; set; }
+    internal string ParameterName { get; set; }
+    internal string ParameterValue { get; set; }
 
-    public InvalidParameterException(string type,
+    internal InvalidParameterException(string type,
                                      string fileName,
                                      string parameterName,
                                      string parameterValue,

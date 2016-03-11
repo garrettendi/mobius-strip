@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Mobius
 {
-  public class PartyWriter
+  internal class PartyWriter
   {
     private MainForm form;
 
-    public PartyWriter(MainForm f)
+    internal PartyWriter(MainForm f)
     {
       form = f;
     }
@@ -18,7 +18,7 @@ namespace Mobius
     /// <summary>
     /// Draws the party window.
     /// </summary>
-    public void DrawPartyWin()
+    internal void DrawPartyWin()
     {
       form.Writer.AddFullLine("*-Party", "*", "-", MainForm.PARTY_WIDTH, form.ConsoleWidth - MainForm.PARTY_WIDTH, 1);
       form.Writer.AddFullLine("|", "|", " ", MainForm.PARTY_WIDTH, form.ConsoleWidth - MainForm.PARTY_WIDTH, 2);

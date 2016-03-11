@@ -3,16 +3,16 @@ using System.Text;
 
 namespace Mobius
 {
-  public class Level : MobiusFile
+  internal class Level : MobiusFile
   {
     // Static variables in order to keep track of all the different chars used
     // to build levels
-    public static readonly char floor = ' ';
-    public static readonly char wallVert = '|';
-    public static readonly char wallHorz = '-';
-    public static readonly char doorClosed = '#';
-    public static readonly char doorOpen = '_';
-    public static readonly char grass = '.';
+    internal static readonly char floor = ' ';
+    internal static readonly char wallVert = '|';
+    internal static readonly char wallHorz = '-';
+    internal static readonly char doorClosed = '#';
+    internal static readonly char doorOpen = '_';
+    internal static readonly char grass = '.';
 
     private char[][] area;
     /// <summary>
@@ -21,7 +21,7 @@ namespace Mobius
     /// <value>
     /// The area.
     /// </value>
-    public char[][] Area { get { return area; } }
+    internal char[][] Area { get { return area; } }
   
     /// <summary>
     /// Gets or sets the area string.
@@ -32,7 +32,7 @@ namespace Mobius
     /// <exception cref='Mobius.Exception.LevelException'>
     /// Is thrown when the height or width is not as declared in the Area property.
     /// </exception>
-    public string AreaStr 
+    internal string AreaStr 
     {
       get 
       {
@@ -66,7 +66,7 @@ namespace Mobius
     /// <value>
     /// The width.
     /// </value>
-    public int Width { get { return width; } }
+    internal int Width { get { return width; } }
 
     private int height;
     /// <summary>
@@ -75,7 +75,7 @@ namespace Mobius
     /// <value>
     /// The height.
     /// </value>
-    public int Height { get { return height; } }
+    internal int Height { get { return height; } }
 
     private int crowd; 
     /// <summary>
@@ -84,7 +84,7 @@ namespace Mobius
     /// <value>
     /// The crowd.
     /// </value>
-    public int Crowd { get { return crowd; } }
+    internal int Crowd { get { return crowd; } }
   
     /// <summary>
     /// Gets the type.
@@ -92,7 +92,7 @@ namespace Mobius
     /// <value>
     /// The type.
     /// </value>
-    public override string Type { get { return Mobius.Enum.FileType.LEVEL; } }
+    internal override string Type { get { return Mobius.Enum.FileType.LEVEL; } }
   
     /// <summary>
     /// Initializes a new instance of the <see cref="Mobius.Level"/> class.
@@ -109,7 +109,7 @@ namespace Mobius
     /// <param name='crowd'>
     /// Crowd number.
     /// </param>
-    public Level(String id, int width, int height, int crowd) : base(id)
+    internal Level(String id, int width, int height, int crowd) : base(id)
     {
       this.area = new char[height][];
       this.width = width;
@@ -123,7 +123,7 @@ namespace Mobius
     /// <returns>
     /// The crowd number.
     /// </returns>
-    public int IncrementCrowd() 
+    internal int IncrementCrowd() 
     { 
       return ++crowd; 
     }
@@ -134,7 +134,7 @@ namespace Mobius
     /// <returns>
     /// The crowd number.
     /// </returns>
-    public int DecrementCrowd ()
+    internal int DecrementCrowd ()
     {
       if (crowd == 0)
         // if crowd is aleady zero, we cannot decrease it

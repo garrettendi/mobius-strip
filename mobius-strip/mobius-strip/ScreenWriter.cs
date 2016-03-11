@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Mobius
 {
-  public class ScreenWriter
+  internal class ScreenWriter
   {
     MainForm form;
 
-    public ScreenWriter(MainForm f)
+    internal ScreenWriter(MainForm f)
     {
       form = f;
     }
 
-    public void AddFullLine(string pre, string post, string filler, int width, int col, int line)
+    internal void AddFullLine(string pre, string post, string filler, int width, int col, int line)
     {
       StringBuilder builder = new StringBuilder(pre);
       while (builder.Length <= width - post.Length - 1)
@@ -27,7 +27,7 @@ namespace Mobius
       CheckAddString(col, line, builder.ToString());
     }
 
-    public void EmptyScreen()
+    internal void EmptyScreen()
     {
       StringBuilder builder = new StringBuilder();
       for (int i = 0; i < form.ConsoleWidth; i++)
@@ -59,7 +59,7 @@ namespace Mobius
     /// <param name='str'>
     /// String to add.
     /// </param>
-    public void CheckAddString(int col, int line, string str)
+    internal void CheckAddString(int col, int line, string str)
     {
       if (col >= 0 && col < form.ConsoleWidth && line >= 0 && line < form.ConsoleHeight)
       {

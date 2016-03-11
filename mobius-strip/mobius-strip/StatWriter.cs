@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Mobius
 {
-  public class StatWriter
+  internal class StatWriter
   {
     private MainForm form;
 
-    public StatWriter(MainForm f)
+    internal StatWriter(MainForm f)
     {
       form = f;
     }
@@ -18,7 +18,7 @@ namespace Mobius
     /// <summary>
     /// Draws the stats bar.
     /// </summary>
-    public void DrawStatsBar()
+    internal void DrawStatsBar()
     {
       form.Writer.AddFullLine(" STATS (1) ::  STR:100  MAG:100  HIT:100  ", "", " ", form.ConsoleWidth, 0, 0);
     }

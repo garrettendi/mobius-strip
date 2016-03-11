@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Mobius
 {
-  public partial class MainForm : Form
+  internal partial class MainForm : Form
   {
-    public MainForm()
+    internal MainForm()
     {
       InitializeComponent();
 
@@ -35,7 +35,7 @@ namespace Mobius
     }
 
     private ScreenWriter writer;
-    public ScreenWriter Writer
+    internal ScreenWriter Writer
     {
       get
       {
@@ -44,7 +44,7 @@ namespace Mobius
     }
 
     private PartyWriter party;
-    public PartyWriter Party
+    internal PartyWriter Party
     {
       get
       {
@@ -53,7 +53,7 @@ namespace Mobius
     }
 
     private StatWriter stat;
-    public StatWriter Stat
+    internal StatWriter Stat
     {
       get
       {
@@ -62,7 +62,7 @@ namespace Mobius
     }
 
     private MapWriter map;
-    public MapWriter Map
+    internal MapWriter Map
     {
       get
       {
@@ -71,7 +71,7 @@ namespace Mobius
     }
 
     private JournalWriter journal;
-    public JournalWriter Journal
+    internal JournalWriter Journal
     {
       get
       {
@@ -80,7 +80,7 @@ namespace Mobius
     }    
   
     private int width = 0;
-    public int ConsoleWidth
+    internal int ConsoleWidth
     {
       get
       {
@@ -89,7 +89,7 @@ namespace Mobius
     }
 
     private int height = 0;
-    public int ConsoleHeight
+    internal int ConsoleHeight
     {
       get
       { 
@@ -97,7 +97,7 @@ namespace Mobius
       }
     }
 
-    public string ScreenText
+    internal string ScreenText
     {
       get
       {
@@ -105,12 +105,12 @@ namespace Mobius
       }
     }
 
-    public void SetDisplay(StringBuilder display)
+    internal void SetDisplay(StringBuilder display)
     {
       this.textBox1.Text = display.ToString();
     }
 
-    public void OnResize()
+    internal void OnResize()
     {
       Graphics g = this.CreateGraphics();
       float fw = g.MeasureString("H", textBox1.Font).Width - 4.5f;
@@ -133,12 +133,12 @@ namespace Mobius
     /// <summary>
     /// Width of party window. Constant.
     /// </summary>
-    public const int PARTY_WIDTH = 14;
+    internal const int PARTY_WIDTH = 14;
 
     /// <summary>
     /// Height of journal window. Constant.
     /// </summary>
-    public const int JOURNAL_HEIGHT = 7;
+    internal const int JOURNAL_HEIGHT = 7;
 
     /// <summary>
     /// Used to enter execution.
@@ -146,7 +146,7 @@ namespace Mobius
     /// <param name='args'>
     /// Arguments. Follow through from Main execution.
     /// </param>
-    public void RedrawScreen()
+    internal void RedrawScreen()
     {
       Writer.EmptyScreen();
 

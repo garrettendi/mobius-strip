@@ -2,9 +2,9 @@ using System;
 
 namespace Mobius.Enum
 {
-  public class FileType
+  internal class FileType
   {
-    public static readonly string GAME = "game";
-    public static readonly string LEVEL = "level";
+    internal static readonly string GAME = "game";
+    internal static readonly string LEVEL = "level";
   }
 }
