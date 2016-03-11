@@ -7,8 +7,8 @@
     <ProjectGuid>{19F219AE-9B6E-4311-9923-BA23B3F5978F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>mobius_string_winforms</RootNamespace>
-    <AssemblyName>mobius-string-winforms</AssemblyName>
+    <RootNamespace>Mobius</RootNamespace>
+    <AssemblyName>mobius-strip</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -47,6 +47,7 @@
     <Compile Include="Exception\InvalidParameterException.cs" />
     <Compile Include="Exception\LevelException.cs" />
     <Compile Include="Exception\TodoException.cs" />
+    <Compile Include="JournalWriter.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,11 +55,15 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs" />
+    <Compile Include="MapWriter.cs" />
     <Compile Include="Mobius\Enums.cs" />
     <Compile Include="Mobius\Game.cs" />
     <Compile Include="Mobius\Level.cs" />
     <Compile Include="Mobius\MobiusFile.cs" />
+    <Compile Include="PartyWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScreenWriter.cs" />
+    <Compile Include="StatWriter.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -70,6 +75,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
