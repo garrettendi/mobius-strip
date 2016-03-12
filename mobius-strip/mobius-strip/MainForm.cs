@@ -21,7 +21,7 @@ namespace Mobius
       this.Load += Form1_Load;
 
       writer = new ScreenWriter(this);
-      journal = new JournalWriter(this);
+      journal = new MsgWriter(this);
       map = new MapWriter(this);
       party = new PartyWriter(this);
       stat = new StatWriter(this);
@@ -70,8 +70,8 @@ namespace Mobius
       }
     }
 
-    private JournalWriter journal;
-    public JournalWriter Journal
+    private MsgWriter journal;
+    public MsgWriter Journal
     {
       get
       {
@@ -156,7 +156,7 @@ namespace Mobius
 
       Party.DrawPartyWin();
 
-      Journal.DrawJournalWin();
+      Journal.DrawMessageWin();
 
       this.textBox1.Select(0, 0);
     }

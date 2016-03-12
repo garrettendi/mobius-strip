@@ -29,14 +29,14 @@ namespace Mobius
     /// The name of the game.
     /// </value>
     private string Name { get; set; }
-  
+
     /// <summary>
     /// Gets the type.
     /// </summary>
     /// <value>
     /// The type.
     /// </value>
-    internal override string Type { get { return Mobius.Enum.FileType.GAME; } }
+    internal override string Type { get; } = Mobius.Enum.FileType.GAME;
 
     /// <summary>
     /// Constructor. Creates a <see cref="Mobius.Game"/> class with null parameters. The FileType is always Game.

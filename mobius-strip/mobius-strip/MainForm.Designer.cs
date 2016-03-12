@@ -52,7 +52,7 @@
       this.ClientSize = new System.Drawing.Size(966, 487);
       this.Controls.Add(this.textBox1);
       this.Name = "MainForm";
-      this.Text = "Form1";
+      this.Text = "Mobius Strip";
       this.ResumeLayout(false);
       this.PerformLayout();
 

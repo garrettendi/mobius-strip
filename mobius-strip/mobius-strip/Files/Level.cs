@@ -92,8 +92,8 @@ namespace Mobius
     /// <value>
     /// The type.
     /// </value>
-    internal override string Type { get { return Mobius.Enum.FileType.LEVEL; } }
-  
+    internal override string Type { get; } = Mobius.Enum.FileType.LEVEL;
+
     /// <summary>
     /// Initializes a new instance of the <see cref="Mobius.Level"/> class.
     /// </summary>

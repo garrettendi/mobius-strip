@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Mobius
 {
-  public class JournalWriter
+  public class MsgWriter
   {
     private MainForm form;
 
-    internal JournalWriter(MainForm f)
+    internal MsgWriter(MainForm f)
     {
       form = f;
     }
@@ -18,9 +18,9 @@ namespace Mobius
     /// <summary>
     /// Draws the journal window.
     /// </summary>
-    internal void DrawJournalWin()
+    internal void DrawMessageWin()
     {
-      form.Writer.AddFullLine("*-Journal", "*", "-", form.ConsoleWidth, 0, form.ConsoleHeight - MainForm.JOURNAL_HEIGHT);
+      form.Writer.AddFullLine("*-Messages", "*", "-", form.ConsoleWidth, 0, form.ConsoleHeight - MainForm.JOURNAL_HEIGHT);
       for (int i = form.ConsoleHeight - MainForm.JOURNAL_HEIGHT + 1; i < form.ConsoleHeight - 1; i++)
         form.Writer.AddFullLine("|", "|", " ", form.ConsoleWidth, 0, i);
       form.Writer.AddFullLine("*", "*", "-", form.ConsoleWidth, 0, form.ConsoleHeight - 1);
