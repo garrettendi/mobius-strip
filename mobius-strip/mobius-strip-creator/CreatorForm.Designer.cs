@@ -28,38 +28,17 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.tabControl1 = new System.Windows.Forms.TabControl();
-      this.tabPageLevel = new System.Windows.Forms.TabPage();
       this.listBoxLevel = new System.Windows.Forms.ListBox();
       this.buttonSave = new System.Windows.Forms.Button();
-      this.textBoxLevel = new System.Windows.Forms.TextBox();
       this.buttonOpen = new System.Windows.Forms.Button();
       this.buttonHelp = new System.Windows.Forms.Button();
-      this.tabControl1.SuspendLayout();
-      this.tabPageLevel.SuspendLayout();
+      this.buttonNew = new System.Windows.Forms.Button();
+      this.panelButtons = new System.Windows.Forms.Panel();
+      this.panelMain = new System.Windows.Forms.Panel();
+      this.levelControl = new mobius_strip_creator.LevelControl();
+      this.panelButtons.SuspendLayout();
+      this.panelMain.SuspendLayout();
       this.SuspendLayout();
-      // 
-      // tabControl1
-      // 
-      this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-      this.tabControl1.Controls.Add(this.tabPageLevel);
-      this.tabControl1.Location = new System.Drawing.Point(117, 0);
-      this.tabControl1.Name = "tabControl1";
-      this.tabControl1.SelectedIndex = 0;
-      this.tabControl1.Size = new System.Drawing.Size(851, 446);
-      this.tabControl1.TabIndex = 0;
-      // 
-      // tabPageLevel
-      // 
-      this.tabPageLevel.Controls.Add(this.textBoxLevel);
-      this.tabPageLevel.Location = new System.Drawing.Point(4, 22);
-      this.tabPageLevel.Name = "tabPageLevel";
-      this.tabPageLevel.Size = new System.Drawing.Size(843, 420);
-      this.tabPageLevel.TabIndex = 0;
-      this.tabPageLevel.Text = "Level";
-      this.tabPageLevel.UseVisualStyleBackColor = true;
       // 
       // listBoxLevel
       // 
@@ -73,71 +52,102 @@
       // buttonSave
       // 
       this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-      this.buttonSave.Location = new System.Drawing.Point(856, 452);
+      this.buttonSave.Location = new System.Drawing.Point(736, 12);
       this.buttonSave.Name = "buttonSave";
       this.buttonSave.Size = new System.Drawing.Size(98, 23);
       this.buttonSave.TabIndex = 2;
       this.buttonSave.Text = "Save Game";
       this.buttonSave.UseVisualStyleBackColor = true;
-      // 
-      // textBoxLevel
-      // 
-      this.textBoxLevel.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.textBoxLevel.Font = new System.Drawing.Font("Lucida Console", 10F);
-      this.textBoxLevel.Location = new System.Drawing.Point(0, 0);
-      this.textBoxLevel.Multiline = true;
-      this.textBoxLevel.Name = "textBoxLevel";
-      this.textBoxLevel.Size = new System.Drawing.Size(843, 420);
-      this.textBoxLevel.TabIndex = 0;
+      this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
       // 
       // buttonOpen
       // 
       this.buttonOpen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-      this.buttonOpen.Location = new System.Drawing.Point(127, 451);
+      this.buttonOpen.Location = new System.Drawing.Point(113, 12);
       this.buttonOpen.Name = "buttonOpen";
       this.buttonOpen.Size = new System.Drawing.Size(101, 23);
       this.buttonOpen.TabIndex = 3;
       this.buttonOpen.Text = "Open Game";
       this.buttonOpen.UseVisualStyleBackColor = true;
+      this.buttonOpen.Click += new System.EventHandler(this.buttonOpen_Click);
       // 
       // buttonHelp
       // 
       this.buttonHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-      this.buttonHelp.Location = new System.Drawing.Point(234, 451);
+      this.buttonHelp.Location = new System.Drawing.Point(220, 12);
       this.buttonHelp.Name = "buttonHelp";
       this.buttonHelp.Size = new System.Drawing.Size(88, 23);
       this.buttonHelp.TabIndex = 4;
       this.buttonHelp.Text = "Help";
       this.buttonHelp.UseVisualStyleBackColor = true;
+      this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
+      // 
+      // buttonNew
+      // 
+      this.buttonNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+      this.buttonNew.Location = new System.Drawing.Point(6, 12);
+      this.buttonNew.Name = "buttonNew";
+      this.buttonNew.Size = new System.Drawing.Size(101, 23);
+      this.buttonNew.TabIndex = 5;
+      this.buttonNew.Text = "New Game";
+      this.buttonNew.UseVisualStyleBackColor = true;
+      this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
+      // 
+      // panelButtons
+      // 
+      this.panelButtons.Controls.Add(this.buttonNew);
+      this.panelButtons.Controls.Add(this.buttonSave);
+      this.panelButtons.Controls.Add(this.buttonOpen);
+      this.panelButtons.Controls.Add(this.buttonHelp);
+      this.panelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
+      this.panelButtons.Location = new System.Drawing.Point(120, 440);
+      this.panelButtons.Name = "panelButtons";
+      this.panelButtons.Size = new System.Drawing.Size(846, 47);
+      this.panelButtons.TabIndex = 6;
+      // 
+      // panelMain
+      // 
+      this.panelMain.Controls.Add(this.levelControl);
+      this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.panelMain.Location = new System.Drawing.Point(120, 0);
+      this.panelMain.Name = "panelMain";
+      this.panelMain.Size = new System.Drawing.Size(846, 440);
+      this.panelMain.TabIndex = 7;
+      // 
+      // levelControl
+      // 
+      this.levelControl.Current = null;
+      this.levelControl.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.levelControl.Location = new System.Drawing.Point(0, 0);
+      this.levelControl.Name = "levelControl";
+      this.levelControl.Size = new System.Drawing.Size(846, 440);
+      this.levelControl.TabIndex = 0;
       // 
       // CreatorForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(966, 487);
-      this.Controls.Add(this.buttonHelp);
-      this.Controls.Add(this.buttonOpen);
-      this.Controls.Add(this.buttonSave);
+      this.Controls.Add(this.panelMain);
+      this.Controls.Add(this.panelButtons);
       this.Controls.Add(this.listBoxLevel);
-      this.Controls.Add(this.tabControl1);
       this.Name = "CreatorForm";
       this.Text = "Mobius Strip Creator";
-      this.tabControl1.ResumeLayout(false);
-      this.tabPageLevel.ResumeLayout(false);
-      this.tabPageLevel.PerformLayout();
+      this.panelButtons.ResumeLayout(false);
+      this.panelMain.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
 
     #endregion
-
-    private System.Windows.Forms.TabControl tabControl1;
-    private System.Windows.Forms.TabPage tabPageLevel;
     private System.Windows.Forms.ListBox listBoxLevel;
     private System.Windows.Forms.Button buttonSave;
-    private System.Windows.Forms.TextBox textBoxLevel;
     private System.Windows.Forms.Button buttonOpen;
     private System.Windows.Forms.Button buttonHelp;
+    private System.Windows.Forms.Button buttonNew;
+    private System.Windows.Forms.Panel panelButtons;
+    private System.Windows.Forms.Panel panelMain;
+    private LevelControl levelControl;
   }
 }
 

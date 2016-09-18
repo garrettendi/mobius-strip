@@ -1,9 +1,11 @@
 using System;
+using System.ComponentModel;
 using System.Text;
 
 namespace Mobius
 {
-  internal class Level : MobiusFile
+  [Serializable, System.Xml.Serialization.XmlRoot("Level")]
+  public class Level : MobiusFile
   {
     // Static variables in order to keep track of all the different chars used
     // to build levels
@@ -15,14 +17,15 @@ namespace Mobius
     internal static readonly char grass = '.';
 
     private char[][] area;
+    [System.Xml.Serialization.XmlElement("Area")]
     /// <summary>
     /// Gets the area.
     /// </summary>
     /// <value>
     /// The area.
     /// </value>
-    internal char[][] Area { get { return area; } }
-  
+    public char[][] Area { get { return area; } set { area = value; InvokePropertyChanged(new PropertyChangedEventArgs("Area")); } }
+
     /// <summary>
     /// Gets or sets the area string.
     /// </summary>
@@ -32,59 +35,68 @@ namespace Mobius
     /// <exception cref='Mobius.Exception.LevelException'>
     /// Is thrown when the height or width is not as declared in the Area property.
     /// </exception>
-    internal string AreaStr 
+    public string AreaStr 
     {
       get 
       {
+        if (Area == null)
+          return string.Empty;
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < area.Length; i++)
+        for (int i = 0; i < Area.Length; i++)
         {
-          sb.AppendLine(new string(area[i]));
+          sb.AppendLine(new string(Area[i]));
         }
         return sb.ToString();
       }
       set 
       {
         // use String.split() with regex to recognise, end-of-line and end-of-file
-        string[] lines = value.Split(new char[] { '\n', '\r' });
-        if (lines.Length != height)
-          // We have a different number of lines to the height of the area. Return exception.
-          throw new Mobius.Exception.LevelException("The height of the actual room does not match the declared height.", this.Id);
+        string[] lines = value.Split(new string[] { "\n", "\r", "\r\n" }, StringSplitOptions.None);
+        //if (lines.Length != height)
+        //  // We have a different number of lines to the height of the area. Return exception.
+        //  throw new Mobius.Exception.LevelException("The height of the actual room does not match the declared height.", this.Id);
+        Area = new char[lines.Length][];
         for (int i = 0; i < lines.Length; i++)
         {
-          if (lines[i].Length != width)
-            throw new Mobius.Exception.LevelException("The width of the actual room does not match the declared width.", this.Id);
-          area[i] = lines[i].ToCharArray();
+          //if (lines[i].Length != width)
+          //  throw new Mobius.Exception.LevelException("The width of the actual room does not match the declared width.", this.Id);
+          Area[i] = lines[i].ToCharArray();
         }
       }
     }
 
-    private int width;
-    /// <summary>
-    /// Gets the width of the level from the left
-    /// </summary>
-    /// <value>
-    /// The width.
-    /// </value>
-    internal int Width { get { return width; } }
+    //private int width;
+    //[System.Xml.Serialization.XmlElement("Width")]
+    ///// <summary>
+    ///// Gets the width of the level from the left
+    ///// </summary>
+    ///// <value>
+    ///// The width.
+    ///// </value>
+    //public int Width { get { return width; } }
 
-    private int height;
-    /// <summary>
-    /// Gets the height of the level from the top.
-    /// </summary>
-    /// <value>
-    /// The height.
-    /// </value>
-    internal int Height { get { return height; } }
+    //private int height;
+    //[System.Xml.Serialization.XmlElement("Height")]
+    ///// <summary>
+    ///// Gets the height of the level from the top.
+    ///// </summary>
+    ///// <value>
+    ///// The height.
+    ///// </value>
+    //public int Height { get { return height; } }
 
-    private int crowd; 
+    private int crowd;
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    [System.Xml.Serialization.XmlElement("Crowd")]
     /// <summary>
     /// Gets the number of people in the crowd.
     /// </summary>
     /// <value>
     /// The crowd.
     /// </value>
-    internal int Crowd { get { return crowd; } }
+    public int Crowd { get { return crowd; } set { crowd = value; InvokePropertyChanged(new PropertyChangedEventArgs("Crowd")); } }
   
     /// <summary>
     /// Gets the type.
@@ -109,11 +121,11 @@ namespace Mobius
     /// <param name='crowd'>
     /// Crowd number.
     /// </param>
-    internal Level(String id, int width, int height, int crowd) : base(id)
+    public Level(String id, int crowd) : base(id)
     {
-      this.area = new char[height][];
-      this.width = width;
-      this.height = height;
+      //this.area = new char[height][];
+      //this.width = width;
+      //this.height = height;
       this.crowd = crowd;
     }
   
@@ -134,7 +146,7 @@ namespace Mobius
     /// <returns>
     /// The crowd number.
     /// </returns>
-    internal int DecrementCrowd ()
+    internal int DecrementCrowd()
     {
       if (crowd == 0)
         // if crowd is aleady zero, we cannot decrease it

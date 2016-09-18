@@ -1,18 +1,23 @@
 using System;
+using System.ComponentModel;
 
 namespace Mobius
 {
   [Serializable]
-  internal abstract class MobiusFile
+  public abstract class MobiusFile : INotifyPropertyChanged
   {
+    private string id;
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
     /// <summary>
     /// Gets or sets the identifier.
     /// </summary>
     /// <value>
     /// The identifier.
     /// </value>
-    internal string Id { get; set; }
-   
+    public string Id { get { return id; } set { id = value; InvokePropertyChanged(new PropertyChangedEventArgs("Id")); } }
+
     /// <summary>
     /// Gets the type.
     /// </summary>
@@ -27,9 +32,15 @@ namespace Mobius
     /// <param name='id'>
     /// Identifier.
     /// </param>
-    internal MobiusFile(string id)
+    public MobiusFile(string id)
     {
       this.Id = id;
+    }
+
+    public void InvokePropertyChanged(PropertyChangedEventArgs e)
+    {
+      PropertyChangedEventHandler handler = PropertyChanged;
+      if (handler != null) handler(this, e);
     }
   }
 }

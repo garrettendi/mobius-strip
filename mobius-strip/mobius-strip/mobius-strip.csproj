@@ -55,6 +55,8 @@
     <Compile Include="Exception\InvalidParameterException.cs" />
     <Compile Include="Exception\LevelException.cs" />
     <Compile Include="Exception\TodoException.cs" />
+    <Compile Include="Helpers\Deserialiser.cs" />
+    <Compile Include="Helpers\Serialiser.cs" />
     <Compile Include="Writers\MsgWriter.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>

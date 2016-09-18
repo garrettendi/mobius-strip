@@ -30,7 +30,6 @@ namespace Mobius
     void Form1_Load(object sender, EventArgs e)
     {
       this.OnResize();
-      Writer.EmptyScreen();
       this.RedrawScreen();
     }
 

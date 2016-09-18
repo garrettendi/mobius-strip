@@ -30,17 +30,13 @@ namespace Mobius
     internal void EmptyScreen()
     {
       StringBuilder builder = new StringBuilder();
-      for (int i = 0; i < form.ConsoleWidth; i++)
-      {
-        builder.Append("£");
-      }
-      for (int i = 1; i < form.ConsoleHeight; i++)
-      {
-        builder.Append("\r\n");
+      for (int i = 0; i < form.ConsoleHeight; i++)
+      {        
         for (int j = 0; j < form.ConsoleWidth; j++)
         {
           builder.Append("£");
         }
+        if (i < form.ConsoleHeight - 1) builder.Append("\r\n");
       }
       form.SetDisplay(builder);
     }
