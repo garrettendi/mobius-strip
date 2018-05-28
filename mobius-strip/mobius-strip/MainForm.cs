@@ -109,6 +109,16 @@ namespace Mobius
       this.textBox1.Text = display.ToString();
     }
 
+    public void SampleReader(string path)
+    {
+      Helpers.Deserialiser des = new Helpers.Deserialiser();
+      Level level = des.Deserialise(Mobius.Enum.FileType.LEVEL, path) as Level;
+      if (level != null)
+      {
+        map.DrawMapInternal(level.AreaStr);
+      }
+    }
+
     public void OnResize()
     {
       Graphics g = this.CreateGraphics();

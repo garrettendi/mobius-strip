@@ -6,10 +6,10 @@ namespace Mobius
   [Serializable]
   public abstract class MobiusFile : INotifyPropertyChanged
   {
-    private string id;
-
     public event PropertyChangedEventHandler PropertyChanged;
 
+    protected string id;
+    [System.Xml.Serialization.XmlElement("Id")]
     /// <summary>
     /// Gets or sets the identifier.
     /// </summary>

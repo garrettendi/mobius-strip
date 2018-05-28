@@ -127,6 +127,7 @@ namespace Mobius
       //this.width = width;
       //this.height = height;
       this.crowd = crowd;
+      this.id = id;
     }
   
     /// <summary>

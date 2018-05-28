@@ -97,6 +97,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Content Include="Samples\Levels\SampleRoom.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

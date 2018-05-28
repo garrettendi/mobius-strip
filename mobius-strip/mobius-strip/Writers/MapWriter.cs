@@ -22,5 +22,10 @@ namespace Mobius
         form.Writer.AddFullLine("|", "|", " ", form.ConsoleWidth - MainForm.PARTY_WIDTH, 0, i);
       form.Writer.AddFullLine("*", "*", "-", form.ConsoleWidth - MainForm.PARTY_WIDTH, 0, form.ConsoleHeight - MainForm.JOURNAL_HEIGHT - 1);
     }
+
+    internal void DrawMapInternal(string map)
+    {
+
+    }
   }
 }
