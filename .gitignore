@@ -28,3 +28,5 @@ obj/
 _ReSharper*/
 [Tt]est[Rr]esult*
 /mobius-strip/.vs/mobius-strip/v15/sqlite3/storage.ide
+*.vsidx
+read.lock
