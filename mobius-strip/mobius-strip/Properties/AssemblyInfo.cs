@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Dale Hards")]
 [assembly: AssemblyProduct("Mobius Strip")]
-[assembly: AssemblyCopyright("Copyright © 2011-2015")]
+[assembly: AssemblyCopyright("Copyright © 2011-2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
