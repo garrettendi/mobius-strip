@@ -30,3 +30,5 @@ _ReSharper*/
 /mobius-strip/.vs/mobius-strip/v15/sqlite3/storage.ide
 *.vsidx
 read.lock
+
+/mobius-strip/.vs
