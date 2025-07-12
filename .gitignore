@@ -32,3 +32,5 @@ _ReSharper*/
 read.lock
 
 /mobius-strip/.vs
+/.vs/mobius-strip/v17
+/.vs/VSWorkspaceState.json
